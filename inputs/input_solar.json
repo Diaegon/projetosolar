@@ -1,0 +1,102 @@
+{
+
+
+"dados_cliente" :  {
+ "nome":"Diego Tavares Canafistula",
+ "CPF":"0090921",
+ "Datanascimento": "17/07/1996",
+ "RG":"20",
+ "telefone": "19281287173",
+ "email": "diego.canafistula@gmail.com",
+ "UC": "21122212",
+ "carga": 8,
+ "disjuntor_geral": 32,
+ "energia":1000,
+ "classeconsumo": "Residencial",
+ "tensao_residencia":220,
+ "fornecimento":"monofasico",
+ "quantidade_painel":12,
+ "quantidade_painel2":15,
+ "quantidade_painel3":20, 
+ "quantidade_inversor":1,
+ "quantidade_inversor2":1,
+ "quantidade_inversor3":1
+},
+
+
+"inversor": {
+    "marca": "PHB",
+    "modelo": "PHB3000-DS",
+    "potencia": 3000,
+    "numero_fases": "monofasico",
+    "tensao": 220,
+    "protecao": 16,
+    "cabo": 2.5,
+    "correntemax": 20
+},
+
+"inversor2": {
+    "marca": "SOLPLANET",
+    "modelo": "PHB3000-DS",
+    "potencia": 3000,
+    "numero_fases": "trifásico",
+    "tensao": 380,
+    "protecao": 16,
+    "cabo": 2.5,
+    "correntemax": 20
+},
+
+"inversor3": {
+    "marca": "SOLPLANET",
+    "modelo": "PHB3000-DS",
+    "potencia": 3000,
+    "numero_fases": "monofasico",
+    "tensao": 220,
+    "protecao": 16,
+    "cabo": 2.5,
+    "correntemax": 20
+},
+
+"painel": {
+    "marca": "Leapton",
+    "modelo": "LP126610 560",
+    "potencia": 560,
+    "vp": 50.45,
+    "imp": 14.3,
+    "voc":55.2,
+    "isc": 16.3
+},
+"painel2": {
+    "marca": "Leapton",
+    "modelo": "LP126610 560",
+    "potencia": 560,
+    "vp": 50.45,
+    "imp": 14.3,
+    "voc":55.2,
+    "isc": 16.3
+},
+"painel3": {
+    "marca": "Leapton",
+    "modelo": "LP126610 560",
+    "potencia": 560,
+    "vp": 50.45,
+    "imp": 14.3,
+    "voc":55.2,
+    "isc": 16.3
+},
+
+"endereco":{
+    "logradouro": "Rua das laranjas",
+    "numero_casa": 979,
+    "complemento": "casa A",
+    "municipio":  "Fortaleza",
+    "CEP": "6000090",
+    "estado": "Ceara",
+    "latitude": -23.00000024,
+    "longitude":-46.00000992
+
+}
+
+}
+
+
