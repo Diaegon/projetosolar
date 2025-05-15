@@ -3,22 +3,22 @@
 
 "dados_cliente" :  {
  "nome":"Diego Tavares Canafistula",
- "CPF":"0090921",
+ "cpf":"0090921",
  "Datanascimento": "17/07/1996",
- "RG":"20",
+ "rg":"20",
  "telefone": "19281287173",
  "email": "diego.canafistula@gmail.com",
- "UC": "21122212",
+ "uc": "21122212",
  "carga": 8,
  "disjuntor_geral": 32,
  "energia":1000,
  "classeconsumo": "Residencial",
  "tensao_residencia":220,
  "fornecimento":"monofasico",
- "quantidade_painel":12,
- "quantidade_painel2":15,
- "quantidade_painel3":20, 
- "quantidade_inversor":1,
+ "quantidade_painel":57,
+ "quantidade_painel2": 2,
+ "quantidade_painel3":3 , 
+ "quantidade_inversor":2,
  "quantidade_inversor2":1,
  "quantidade_inversor3":1
 },
@@ -27,34 +27,23 @@
 "inversor": {
     "marca": "PHB",
     "modelo": "PHB3000-DS",
-    "potencia": 3000,
-    "numero_fases": "monofasico",
-    "tensao": 220,
-    "protecao": 16,
-    "cabo": 2.5,
-    "correntemax": 20
+    "potencia": 8000,
+    "numero_fases": "monofasico"
 },
 
 "inversor2": {
     "marca": "SOLPLANET",
-    "modelo": "PHB3000-DS",
+    "modelo": "AWS3000-se",
     "potencia": 3000,
-    "numero_fases": "trifásico",
-    "tensao": 380,
-    "protecao": 16,
-    "cabo": 2.5,
-    "correntemax": 20
+    "numero_fases": "trifasico"
+
 },
 
 "inversor3": {
     "marca": "SOLPLANET",
-    "modelo": "PHB3000-DS",
-    "potencia": 3000,
-    "numero_fases": "monofasico",
-    "tensao": 220,
-    "protecao": 16,
-    "cabo": 2.5,
-    "correntemax": 20
+    "modelo": "ASW4000-3S",
+    "potencia": 4000,
+    "numero_fases": "monofasico"
 },
 
 "painel": {
@@ -64,25 +53,28 @@
     "vp": 50.45,
     "imp": 14.3,
     "voc":55.2,
-    "isc": 16.3
+    "isc": 16.3,
+    "tipo": "monocristralino"
 },
 "painel2": {
-    "marca": "Leapton",
-    "modelo": "LP126610 560",
+    "marca": "GOKIN",
+    "modelo": "GK2192812781",
     "potencia": 560,
-    "vp": 50.45,
+    "vp": 50.65,
     "imp": 14.3,
     "voc":55.2,
-    "isc": 16.3
+    "isc": 16.3,
+    "tipo": "monocristralino"
 },
 "painel3": {
-    "marca": "Leapton",
-    "modelo": "LP126610 560",
+    "marca": "JINKO",
+    "modelo": "JK1212121",
     "potencia": 560,
-    "vp": 50.45,
+    "vp": 52.45,
     "imp": 14.3,
     "voc":55.2,
-    "isc": 16.3
+    "isc": 16.3,
+    "tipo": "monocristralino"
 },
 
 "endereco":{
@@ -90,12 +82,36 @@
     "numero_casa": 979,
     "complemento": "casa A",
     "municipio":  "Fortaleza",
-    "CEP": "6000090",
+    "cep": "6000090",
     "estado": "Ceara",
     "latitude": -23.00000024,
     "longitude":-46.00000992
+},
+
+"residencia_cliente":{
+    "logradouro": "Rua das laranjas",
+    "numero_casa": 979, 
+    "complemento": "casa A",
+    "municipio":  "Fortaleza",
+    "cep": "6000090",
+    "estado": "Ceara"
+},
+
+"dados_procurador":{
+    "nome": "procurador",
+    "cpf": "0000000",
+    "rg": "0000000",
+    "telefone": "0000000",
+    "email": "procurador@gmail.com",
+    "logradouro_procurador": "Rua das bananas",
+    "numero_casa_procurador": 979,
+    "complemento_procurador": "casa A",
+    "municipio_procurador":  "Fortaleza",
+    "cep_procurador": "6000090",
+    "estado_procurador": "Ceara"
 
 }
+
 
 }
 

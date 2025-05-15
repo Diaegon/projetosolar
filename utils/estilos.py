@@ -32,7 +32,11 @@ estilo_tabela_parametros = TableStyle([# Comandos de estilo vão aqui:  ('COMAND
     ('VALIGN', (0, 0), (-1, 0), 'MIDDLE'),
     ('GRID', (0, 0), (-1, -1), 1, colors.black)   
     ])
+estilo_assinatura = TableStyle([
+    ('GRID', (0, 0), (0, 0), 1, colors.black),
 
+    ('ALIGN', (0, 0), (-1, -1), 'CENTER')
+])
 
 styles.add(ParagraphStyle(name='TituloSecao',
                           fontSize=14,
