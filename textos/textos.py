@@ -14,7 +14,7 @@ with open(caminho_absoluto, 'r') as f:
 
 data_de_hoje = datetime.now()
 data_futura = data_de_hoje+relativedelta(months=1)
-
+#MEMORIAL DESCRITIVO
 def texto_introducao():
 
 
@@ -107,6 +107,7 @@ def texto_sinalizacao():
 PVC 2,0 mm com tratamento anti-UV, conforme Figura a seguir, fixada de acordo \
 com o desenho D010.01 dá NT Br-010 R-01, sem que haja a perfuração da caixa para \
 fixação da sinalização. "
+#PROCURACAO
 def texto_procuracao():
     return f"Por esse instrumento particular de procuração, eu, {nome_cliente}, brasileiro, portador do CPF {cpf_cliente}, \
     residente e domiciliado na {logradouro_cliente}, {numero_cliente} {complemento_cliente}, {municipio_cliente}, {estado_cliente},\

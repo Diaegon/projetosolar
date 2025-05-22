@@ -23,11 +23,11 @@ O programa recebe os dados do cliente e gera automaticamente toda a documentaç�
    - Suporte a múltiplos modelos de inversores e placas  
 
 2. **Geração da documentação complementar**  
-   - Diagrama unifilar  
-   - Preenchimento automático dos formulários  
-   - Geração de procuração e PDF de dados importantes  
+   - Diagrama unifilar  (arquivos bases com edição utilizando a biblioteca pymupdf)
+   - Preenchimento automático dos formulários  (biblioteca pymupdf)
+   - Geração de procuração e PDF FICHA DO CLIENTE  
 
-3. **Banco de dados dinâmico**  
+3. **Banco de dados dinâmico**  (projeto do banco de dados vai correr em paralelo com o da geração de projetos)
    - Cadastro e atualização de novos modelos de equipamentos  
    - Geração automática de pastas organizadas por cliente  
 
@@ -36,6 +36,10 @@ O programa recebe os dados do cliente e gera automaticamente toda a documentaç�
 
 5. **Geração do diagrama de situação**  
    - Desenho automático da localização da residência e sistema a partir de coordenadas geográficas  
+
+6. **Atualizações para melhoria do código**
+   - Cadastrar os inversores com a quantidade de string de cada modelo para que se possa fazer uma lógica adaptativa para que o texto se modifique de acordo com o inversor.
+   - Diminuir o código "equacoes.py" para que o programa adicione uma quantidade ilimitada de inversores/placas de acordo com o input, sem a limitação de 3 tipos de inversores diferentes. 
 
 ## Como usar (em desenvolvimento)
 

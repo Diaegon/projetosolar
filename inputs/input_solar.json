@@ -2,8 +2,8 @@
 
 
 "dados_cliente" :  {
- "nome":"Diego Tavares Canafistula",
- "cpf":"0090921",
+ "nome":"Diego tavares",
+ "cpf":"123456789",
  "Datanascimento": "17/07/1996",
  "rg":"20",
  "telefone": "19281287173",
@@ -12,15 +12,16 @@
  "carga": 8,
  "disjuntor_geral": 32,
  "energia":1000,
- "classeconsumo": "Residencial",
- "tensao_residencia":220,
- "fornecimento":"monofasico",
- "quantidade_painel":57,
+ "classeconsumo": "residencial",
+ "fornecimento":"trifasico",
+ "ramal": "aereo",
+ "tensao_residencia":380,
+  "quantidade_painel":57,
  "quantidade_painel2": 2,
  "quantidade_painel3":3 , 
- "quantidade_inversor":2,
- "quantidade_inversor2":1,
- "quantidade_inversor3":1
+ "quantidade_inversor":1,
+ "quantidade_inversor2":null,
+ "quantidade_inversor3":null
 },
 
 
@@ -28,7 +29,7 @@
     "marca": "PHB",
     "modelo": "PHB3000-DS",
     "potencia": 8000,
-    "numero_fases": "monofasico"
+    "numero_fases": "trifasico"
 },
 
 "inversor2": {
@@ -43,7 +44,7 @@
     "marca": "SOLPLANET",
     "modelo": "ASW4000-3S",
     "potencia": 4000,
-    "numero_fases": "monofasico"
+    "numero_fases": "trifasico"
 },
 
 "painel": {
@@ -83,9 +84,10 @@
     "complemento": "casa A",
     "municipio":  "Fortaleza",
     "cep": "6000090",
+    "bairro": "Barra do ceara",
     "estado": "Ceara",
-    "latitude": -23.00000024,
-    "longitude":-46.00000992
+    "latitude": -23.00024,
+    "longitude":-46.00003
 },
 
 "residencia_cliente":{
@@ -96,9 +98,14 @@
     "cep": "6000090",
     "estado": "Ceara"
 },
+"projeto":{
+    "projetista": "DIEGO TAVARES CANAFISTULA",
+    "cft_crea": "04571454392",
+    "rubrica": "DT CANAFISTULA"
+},
 
 "dados_procurador":{
-    "nome": "procurador",
+    "nome": "procurador da silva santos",
     "cpf": "0000000",
     "rg": "0000000",
     "telefone": "0000000",

@@ -94,10 +94,12 @@ def quantidade_string(inversor_potencia):
 disjuntor_geral = inputs['dados_cliente']['disjuntor_geral']
 fornecimento = inputs['dados_cliente']['fornecimento']
 tensao_local = inputs['dados_cliente']['tensao_residencia']
+texto_disjuntorgeral_unifilar = f"DISJUNTOR\nMONOFÁSICO\n \n{disjuntor_geral} A - 220V" 
+texto2_disjuntorgeral_unifilar = f"DISJUNTOR\nTRIFÁSICO\n \n{disjuntor_geral} A - 380/220V" 
 
 #inicio da logica dos inversores e paineis
 quantidade_inversor2 = 0
-quantidade_inversor3 = 0    
+quantidade_inversor3 = 0
 
 inversor_potencia = inputs['inversor']['potencia']
 inversores_potencia = [f"{str(inversor_potencia)}"]
@@ -110,6 +112,9 @@ corrente_saida = corrente_saida_calc(inversor_potencia, multiplicador, inversor_
 equacao3 = fr"$I_{{\mathrm{{AG}}}} = \frac{{\mathrm{{potencia\ nominal }}}}{{\mathrm{{Tensao\ nominal * {multiplicador}}}}} = \frac{{{inversor_potencia}}}{{{inversor_tensao * multiplicador}}} = {corrente_saida:.2f}\ A$"
 cabo_inversor1, corrente_max_cabo1, disjuntor_protecao1 = disjuntor_protecao_inversores(corrente_saida)
 inversor = f"{quantidade_inversor} " + "inversor" + f" {inversor_marca} {inversor_modelo}"
+texto_disjuntor1_unifilar = f"DISJUNTOR\nMONOFÁSICO\n{disjuntor_protecao1} A - 220V"
+texto2_disjuntor1_unifilar = f"DISJUNTOR\nTRIFÁSICO\n{disjuntor_protecao1} A - 380V"
+inversor_diagrama = f"{quantidade_inversor}x " + f" {inversor_marca} \n {inversor_modelo}"
 texto_inversor = [f"{inversor}"]
 quantidade_stringsinversor1 = quantidade_string(inversor_potencia)
 quantidade_total_string = quantidade_stringsinversor1*quantidade_inversor
@@ -120,6 +125,7 @@ texto_corrente_saida = [f"{corrente_saida:.2f} A"]
 inversores_tensao = [f"{inversor_tensao}"]
 tensao_queda = (200 * 0.0173 * 10 * corrente_saida) / (inversor_tensao * cabo_inversor1)
 texto_tensao_queda = [f"{tensao_queda:.2f} %"]  
+inversor_total_unifilar = inversor_potencia * quantidade_inversor
 if inputs['dados_cliente']['quantidade_inversor2'] not in [None, 0]: # not in [none,0] 
     inversor2_potencia = inputs['inversor2']['potencia']
     inversores_potencia.append(str(inversor2_potencia))
@@ -132,6 +138,9 @@ if inputs['dados_cliente']['quantidade_inversor2'] not in [None, 0]: # not in [n
     cabo_inversor2, corrente_max_cabo2, disjuntor_protecao2 = disjuntor_protecao_inversores(corrente_saida2)
     equacao3_2 = fr"$I_{{\mathrm{{AG}}}} = \frac{{\mathrm{{potencia\ nominal}}}}{{\mathrm{{Tensao\ nominal * {multiplicador2}}}}} = \frac{{{inversor2_potencia}}}{{{inversor_tensao2 * multiplicador2}}} = {corrente_saida2:.2f}\ A$"
     inversor2 = f"{quantidade_inversor2} " + "inversor" + f" {inversor2_marca} {inversor2_modelo}"
+    texto_disjuntor2_unifilar = f"DISJUNTOR\nMONOFÁSICO\n{disjuntor_protecao2} A - 220V"
+    texto2_disjuntor2_unifilar = f"DISJUNTOR\nTRIFÁSICO\n{disjuntor_protecao2} A - 380V"
+    inversor2_diagrama = f"{quantidade_inversor2}x " + f" {inversor2_marca} \n {inversor2_modelo}"
     texto_inversor.append(f"{inversor2}")
     quantidade_total_string_inversor2 = quantidade_string(inversor2_potencia)
     quantidade_total_string += quantidade_total_string_inversor2
@@ -142,6 +151,7 @@ if inputs['dados_cliente']['quantidade_inversor2'] not in [None, 0]: # not in [n
     inversores_tensao.append(f"{inversor_tensao2}")
     tensao_queda2 = (200 * 0.0173 * 10 * corrente_saida2) / (inversor_tensao2 * cabo_inversor2)
     texto_tensao_queda.append(f"{tensao_queda2:.2f} %")
+    inversor_total_unifilar += inversor2_potencia * quantidade_inversor2
 if inputs['dados_cliente']['quantidade_inversor3'] not in [None, 0]:
     inversor3_potencia = inputs['inversor3']['potencia']
     inversores_potencia.append(str(inversor3_potencia))
@@ -154,6 +164,9 @@ if inputs['dados_cliente']['quantidade_inversor3'] not in [None, 0]:
     cabo_inversor3, corrente_max_cabo3, disjuntor_protecao3 = disjuntor_protecao_inversores(corrente_saida3)
     equacao3_3 = fr"$I_{{\mathrm{{AG}}}} = \frac{{\mathrm{{potencia\ nominal}}}}{{\mathrm{{Tensao\ nominal * {multiplicador3}}}}} = \frac{{{inversor3_potencia}}}{{{inversor_tensao3 * multiplicador3}}} = {corrente_saida3:.2f}\ A$"
     inversor3 = f"{quantidade_inversor3} " + "inversor" + f" {inversor3_marca} {inversor3_modelo}"
+    texto_disjuntor3_unifilar = f"DISJUNTOR\nMONOFÁSICO\n{disjuntor_protecao3} A - 220V"
+    texto2_disjuntor3_unifilar = f"DISJUNTOR\nTRIFÁSICO\n{disjuntor_protecao3} A - 380V"
+    inversor3_diagrama = f"{quantidade_inversor3}x " + f" {inversor3_marca} \n {inversor3_modelo}"
     texto_inversor.append(f"{inversor3}")
     quantidade_total_string_inversor3 = quantidade_string(inversor3_potencia)
     quantidade_total_string += quantidade_total_string_inversor3    
@@ -164,6 +177,7 @@ if inputs['dados_cliente']['quantidade_inversor3'] not in [None, 0]:
     inversores_tensao.append(f"{inversor_tensao3}") 
     tensao_queda3 = (200 * 0.0173 * 10 * corrente_saida3) / (inversor_tensao3 * cabo_inversor3)
     texto_tensao_queda.append(f"{tensao_queda3:.2f} %")
+    inversor_total_unifilar += inversor3_potencia * quantidade_inversor3
 
 
 #DADOS DO PAINEL PRINCIPAL
@@ -172,9 +186,9 @@ marca_painel = inputs['painel']['marca']
 modelo_painel = inputs['painel']['modelo']
 potencia_painel = inputs['painel']['potencia']  
 quantidade_painel1 = inputs['dados_cliente']['quantidade_painel']
-
 quantidade_total_painel = quantidade_painel1
 paineis = f"{quantidade_painel1}" + " módulos fotovoltaicos " + f"{marca_painel}  {modelo_painel}" + " de " + f"{potencia_painel}" + " Wp"
+paineis_diagrama = f"{quantidade_painel1} x {marca_painel}" + f"\n{modelo_painel}" +  f" {potencia_painel}" + " Wp"
 texto_paineis = [f"{paineis}"]
 tipo_painel = f"{inputs['painel']['tipo']}"
 texto_painel_tipo = f"{inputs['painel']['tipo']}" + " " + f"{inputs['painel']['potencia']}" + " Wp"
@@ -182,6 +196,7 @@ texto_potencia_individual_paineis = [f"{potencia_painel}"]
 tensao_individual_paineis = f"{inputs['painel']['vp']}"
 texto_tensao_individual_paineis = [f"{tensao_individual_paineis}"] 
 potencia_totalpainel = (potencia_painel*quantidade_painel1) / 1000
+potencia_total_unifilar = potencia_painel * quantidade_painel1
 
 #CONDICIONAL CASO ENTRE UM SEGUNDO PAINEL
 if inputs['dados_cliente']['quantidade_painel2'] not in [None, 0]:
@@ -191,6 +206,7 @@ if inputs['dados_cliente']['quantidade_painel2'] not in [None, 0]:
     modelo_painel2 = inputs['painel2']['modelo']    
     potencia_painel2 = inputs['painel2']['potencia']
     paineis2 = f" {quantidade_painel2}" + " modulos fotovoltaicos " + f"{marca_painel2} {modelo_painel2}" + " de " + f"{potencia_painel2}" + " Wp"
+    paineis_diagrama2 = f"{quantidade_painel2} x {marca_painel2}" + f"\n{modelo_painel2}" +  f" {potencia_painel2}" + " Wp"
     tipo_painel2 = f"{inputs['painel2']['tipo']}"
     texto_paineis.append(f"{paineis2}")
     texto_painel_tipo = f"{tipo_painel}" + " " + f"{potencia_painel}" + " Wp" + ", " + f"{tipo_painel2}" + " " + f"{potencia_painel2}" + " Wp"
@@ -198,6 +214,7 @@ if inputs['dados_cliente']['quantidade_painel2'] not in [None, 0]:
     tensao_individual_paineis2 = f"{inputs['painel2']['vp']}"
     texto_tensao_individual_paineis.append(f"{tensao_individual_paineis2}")
     potencia_totalpainel += (potencia_painel2*quantidade_painel2)  / 1000 
+    potencia_total_unifilar += (potencia_painel2*quantidade_painel2)
         
 #CONDICIONAL CASO ENTRE UM TERCEIRO PAINEL
 if inputs['dados_cliente']['quantidade_painel3'] not in [None, 0]:
@@ -207,6 +224,7 @@ if inputs['dados_cliente']['quantidade_painel3'] not in [None, 0]:
     modelo_painel3 = inputs['painel3']['modelo']
     potencia_painel3 = inputs['painel3']['potencia'] 
     paineis3 = f" {quantidade_painel3}" + " modulos fotovoltaicos " + f"{marca_painel3} {modelo_painel3}" + " de " + f"{potencia_painel3}" + " Wp" 
+    paineis_diagrama3 =  f"{quantidade_painel3} x {marca_painel3}" + f"\n{modelo_painel3}" +  f" {potencia_painel3}" + " Wp"
     tipo_painel3 = f"{inputs['painel3']['tipo']}"
     texto_paineis.append(f"{paineis3}")    
     texto_painel_tipo = f"{tipo_painel}" + " " + f"{potencia_painel}" + " Wp" + ", " + f"{tipo_painel2}" + " " + f"{potencia_painel2}" + " Wp" + ", " + f"{tipo_painel3}" + " " + f"{potencia_painel3}" + " Wp"
@@ -214,7 +232,7 @@ if inputs['dados_cliente']['quantidade_painel3'] not in [None, 0]:
     tensao_individual_paineis3 = f"{inputs['painel3']['vp']}"
     texto_tensao_individual_paineis.append(f"{tensao_individual_paineis3}")
     potencia_totalpainel += (potencia_painel3*quantidade_painel3) / 1000 
-
+    potencia_total_unifilar += (potencia_painel3*quantidade_painel3)
 #VALORES QUE RETORNAM PARA O TEXTO
        
 texto_finalpaineis = ", ".join(texto_paineis) #.join() concatena as strings da variável.
